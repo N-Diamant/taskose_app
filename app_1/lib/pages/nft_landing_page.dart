@@ -60,28 +60,46 @@ class NFTLandingPage extends StatelessWidget {
             SizedBox(height: 16),
 
             // Description Section
-            Text(
-              'Description',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Amet minim mollit non deserunt ullamco est sit aliqua dolor amet sint. '
-              'Velit officia consequat duis non deserunt enim velit mollit. Do Exercitation veniam minim...',
-              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-            ),
-            GestureDetector(
-              onTap: () {
-                // Show details
-              },
-              child: Text(
-                'See Details',
-                style: TextStyle(color: Colors.blue),
-              ),
-            ),
+          Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Description',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
+      ),
+    ),
+    SizedBox(height: 8),
+    Text(
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor amet sint. '
+      'Velit officia consequat duis non deserunt enim velit mollit.',
+      style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+    ),
+    Row(
+      children: [
+        Text(
+          'Do Exercitation veniam minim...',
+          style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+        ),
+        GestureDetector(
+          onTap: () {
+            // Navigate to the details page (replace with your navigation code)
+          },
+          child: Text(
+            ' See Details',
+            style: TextStyle(color: Colors.deepPurple[400]),
+          ),
+        ),
+      ],
+    ),
+  ],
+),
+
+
+
+
+
             SizedBox(height: 24), // Increased spacing
 
             // Team Section
@@ -95,8 +113,7 @@ class NFTLandingPage extends StatelessWidget {
                 ),
                 SizedBox(width: 8),
                 Container(
-                  padding: EdgeInsets.only(
-                      left: 152),
+                  padding: EdgeInsets.only(left: 152),
                   child: Row(
                     children: [
                       ...List.generate(
@@ -142,7 +159,9 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Rafi Islam Apon (you)',
-                  style: TextStyle(fontSize: 14, color: const Color.fromARGB(255, 85, 83, 83)),
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: const Color.fromARGB(255, 85, 83, 83)),
                 ),
               ],
             ),
@@ -189,8 +208,6 @@ class NFTLandingPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-
-
                 Transform.translate(
                   offset: Offset(130, 0),
                   child: Row(
@@ -215,50 +232,46 @@ class NFTLandingPage extends StatelessWidget {
 
             // Attachment Section
             Row(
-  children: [
-    Icon(Icons.attach_file, color: Colors.grey),
-    SizedBox(width: 8),
-    Text(
-      'Attachment',
-      style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-    ),
-    SizedBox(width: 8),
-
-
-    Transform.translate(
-      offset: Offset(110, 0), // Moves 30px to the right
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        decoration: BoxDecoration(
-          color: Colors.blue[100],
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          children: [
-            Icon(Icons.file_present, color: Colors.blue[800]),
-            SizedBox(width: 4),
-            Text(
-              'References.pdf',
-              style: TextStyle(color: Colors.blue[800]),
+              children: [
+                Icon(Icons.attach_file, color: Colors.grey),
+                SizedBox(width: 8),
+                Text(
+                  'Attachment',
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                ),
+                SizedBox(width: 8),
+                Transform.translate(
+                  offset: Offset(110, 0), // Moves 30px to the right
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.blue[100],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.file_present, color: Colors.blue[800]),
+                        SizedBox(width: 4),
+                        Text(
+                          'References.pdf',
+                          style: TextStyle(color: Colors.blue[800]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8),
+                Transform.translate(
+                  offset: Offset(110, 0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Add new attachment
+                    },
+                    child: Text('Add'),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    ),
-    SizedBox(width: 8),
-
-
-    Transform.translate(
-      offset: Offset(110, 0),
-      child: ElevatedButton(
-        onPressed: () {
-          // Add new attachment
-        },
-        child: Text('Add'),
-      ),
-    ),
-  ],
-),
 
             SizedBox(height: 24), // Increased spacing
 
