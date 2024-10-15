@@ -91,12 +91,12 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Team',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
                 Container(
                   padding: EdgeInsets.only(
-                      left: 40), // Add left padding of 20 pixels
+                      left: 152),
                   child: Row(
                     children: [
                       ...List.generate(
@@ -133,7 +133,7 @@ class NFTLandingPage extends StatelessWidget {
                 ),
                 SizedBox(width: 8),
                 Container(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 145),
                   child: CircleAvatar(
                     radius: 15,
                     // backgroundImage: AssetImage('assets/images/leader.png'),
@@ -142,7 +142,7 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Rafi Islam Apon (you)',
-                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                  style: TextStyle(fontSize: 14, color: const Color.fromARGB(255, 85, 83, 83)),
                 ),
               ],
             ),
@@ -158,14 +158,21 @@ class NFTLandingPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-                Transform.translate(
-                  offset: Offset(30,0), // Move 30px to the left
+                Padding(
+                  padding: EdgeInsets.only(left: 150), // Simulates margin-left
                   child: Container(
                     padding:
                         EdgeInsets.only(left: 12, right: 12, top: 4, bottom: 4),
                     decoration: BoxDecoration(
-                      color: Colors.pink[100],
-                      borderRadius: BorderRadius.circular(20),
+                      color: const Color.fromARGB(255, 244, 75, 134),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      'To Do',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ),
@@ -173,7 +180,6 @@ class NFTLandingPage extends StatelessWidget {
             ),
             SizedBox(height: 24), // Increased spacing
 
-            // Due Date Section
             Row(
               children: [
                 Icon(Icons.calendar_today, color: Colors.grey),
@@ -183,56 +189,77 @@ class NFTLandingPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-                Text(
-                  'Dec 27, 2024',
-                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-                ),
-                IconButton(
-                  icon: Icon(Icons.edit, color: Colors.grey),
-                  onPressed: () {
-                    // Edit due date
-                  },
-                ),
-              ],
-            ),
-            SizedBox(height: 24), // Increased spacing
 
-            // Attachment Section
-            Row(
-              children: [
-                Icon(Icons.attach_file, color: Colors.grey),
-                SizedBox(width: 8),
-                Text(
-                  'Attachment',
-                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-                ),
-                SizedBox(width: 8),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.blue[100],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+
+                Transform.translate(
+                  offset: Offset(130, 0),
                   child: Row(
                     children: [
-                      Icon(Icons.file_present, color: Colors.blue[800]),
-                      SizedBox(width: 4),
                       Text(
-                        'References.pdf',
-                        style: TextStyle(color: Colors.blue[800]),
+                        'Dec 27, 2024',
+                        style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.edit, color: Colors.grey),
+                        onPressed: () {
+                          // Edit due date
+                        },
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 8),
-                ElevatedButton(
-                  onPressed: () {
-                    // Add new attachment
-                  },
-                  child: Text('Add'),
-                ),
               ],
             ),
+
+            SizedBox(height: 24), // Increased spacing
+
+            // Attachment Section
+            Row(
+  children: [
+    Icon(Icons.attach_file, color: Colors.grey),
+    SizedBox(width: 8),
+    Text(
+      'Attachment',
+      style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+    ),
+    SizedBox(width: 8),
+
+
+    Transform.translate(
+      offset: Offset(110, 0), // Moves 30px to the right
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        decoration: BoxDecoration(
+          color: Colors.blue[100],
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.file_present, color: Colors.blue[800]),
+            SizedBox(width: 4),
+            Text(
+              'References.pdf',
+              style: TextStyle(color: Colors.blue[800]),
+            ),
+          ],
+        ),
+      ),
+    ),
+    SizedBox(width: 8),
+
+
+    Transform.translate(
+      offset: Offset(110, 0),
+      child: ElevatedButton(
+        onPressed: () {
+          // Add new attachment
+        },
+        child: Text('Add'),
+      ),
+    ),
+  ],
+),
+
             SizedBox(height: 24), // Increased spacing
 
             // Custom Section Button
