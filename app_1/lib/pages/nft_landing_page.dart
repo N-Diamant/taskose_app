@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/task.dart';
 
 class NFTLandingPage extends StatelessWidget {
   @override
@@ -60,45 +61,41 @@ class NFTLandingPage extends StatelessWidget {
             SizedBox(height: 16),
 
             // Description Section
-          Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    Text(
-      'Description',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 18,
-      ),
-    ),
-    SizedBox(height: 8),
-    Text(
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor amet sint. '
-      'Velit officia consequat duis non deserunt enim velit mollit.',
-      style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-    ),
-    Row(
-      children: [
-        Text(
-          'Do Exercitation veniam minim...',
-          style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-        ),
-        GestureDetector(
-          onTap: () {
-            // Navigate to the details page (replace with your navigation code)
-          },
-          child: Text(
-            ' See Details',
-            style: TextStyle(color: Colors.deepPurple[400]),
-          ),
-        ),
-      ],
-    ),
-  ],
-),
-
-
-
-
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Description',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Amet minim mollit non deserunt ullamco est sit aliqua dolor amet sint. '
+                  'Velit officia consequat duis non deserunt enim velit mollit.',
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Do Exercitation veniam minim...',
+                      style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        // Navigate to the details page (replace with your navigation code)
+                      },
+                      child: Text(
+                        ' See Details',
+                        style: TextStyle(color: Colors.deepPurple[400]),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
 
             SizedBox(height: 24), // Increased spacing
 
@@ -245,16 +242,21 @@ class NFTLandingPage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.blue[100],
-                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: const Color.fromARGB(
+                            255, 133, 93, 203), // Set the border color: ;
+                        width: 1, // Set the border width to 1 pixel
+                      ),
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.file_present, color: Colors.blue[800]),
+                        Icon(Icons.file_present, color: Colors.deepPurple[400]),
                         SizedBox(width: 4),
                         Text(
                           'References.pdf',
-                          style: TextStyle(color: Colors.blue[800]),
+                          style: TextStyle(color: Colors.deepPurple[400]),
                         ),
                       ],
                     ),
@@ -273,23 +275,50 @@ class NFTLandingPage extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: 24), // Increased spacing
+            SizedBox(height: 30), // Increased spacing
 
             // Custom Section Button
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Add custom section
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple[100],
-                ),
-                child: Text(
-                  'Add Custom Section',
-                  style: TextStyle(color: Colors.purple[800]),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              height: 50.0, // Wider width (90% of parent)
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(
+                    255, 242, 233, 255), // Background color
+                borderRadius:
+                    BorderRadius.circular(11), // Reduced border radius
+              ),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Add custom section
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors
+                        .transparent, // Make the button background transparent
+                    elevation: 0, // Remove shadow elevation
+                    padding: EdgeInsets.symmetric(
+                        vertical: 12), // Adjust padding if necessary
+                  ).copyWith(
+                    // Remove hover color
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                  ),
+                  child: Text(
+                    'Add Custom Section',
+                    style: TextStyle(color: Colors.purple[800]),
+                  ),
                 ),
               ),
             ),
+            SizedBox(height: 16),
+            //sub tasks section
+
+            MyTask(taskName: 'define problem with client', taskCompleted: false),
+            SizedBox(height: 16),
+            MyTask(taskName: 'define problem with client', taskCompleted: false),
+            SizedBox(height: 16),
+            MyTask(taskName: 'define problem with client', taskCompleted: false),
+            SizedBox(height: 16),
+            MyTask(taskName: 'define problem with client', taskCompleted: false)
           ],
         ),
       ),
