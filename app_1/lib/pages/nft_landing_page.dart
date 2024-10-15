@@ -26,6 +26,13 @@ class NFTLandingPage extends StatelessWidget {
             },
           ),
           IconButton(
+            icon: Icon(Icons.arrow_upward_outlined,
+                color: Colors.lightBlue), // Upload icon: ;
+            onPressed: () {
+              // Handle upload
+            },
+          ),
+          IconButton(
             icon: Icon(Icons.more_horiz, color: Colors.black),
             onPressed: () {
               // Show more options
@@ -44,10 +51,10 @@ class NFTLandingPage extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage('assets/images/banner_image.png'),
-                  fit: BoxFit.cover,
-                ),
+                // image: DecorationImage(
+                //   image: AssetImage('assets/images/img1.png'),
+                //   fit: BoxFit.cover,
+                // ),
               ),
             ),
             SizedBox(height: 16),
@@ -75,7 +82,7 @@ class NFTLandingPage extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24), // Increased spacing
 
             // Team Section
             Row(
@@ -87,7 +94,9 @@ class NFTLandingPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-                Expanded(
+                Container(
+                  padding: EdgeInsets.only(
+                      left: 40), // Add left padding of 20 pixels
                   child: Row(
                     children: [
                       ...List.generate(
@@ -96,7 +105,7 @@ class NFTLandingPage extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 4.0),
                           child: CircleAvatar(
                             radius: 15,
-                            backgroundImage: AssetImage('assets/images/avatar_$index.png'),
+                            // backgroundImage: AssetImage('assets/images/avatar_$index.png'),
                           ),
                         ),
                       ),
@@ -110,7 +119,8 @@ class NFTLandingPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+
+            SizedBox(height: 24), // Increased spacing
 
             // Leader Section
             Row(
@@ -119,12 +129,15 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Leader',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 15,
-                  backgroundImage: AssetImage('assets/images/leader.png'),
+                Container(
+                  padding: EdgeInsets.only(left: 30),
+                  child: CircleAvatar(
+                    radius: 15,
+                    // backgroundImage: AssetImage('assets/images/leader.png'),
+                  ),
                 ),
                 SizedBox(width: 8),
                 Text(
@@ -133,7 +146,7 @@ class NFTLandingPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24), // Increased spacing
 
             // Status Section
             Row(
@@ -142,26 +155,23 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Status',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.pink[100],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    'To Do',
-                    style: TextStyle(
-                      color: Colors.pink[800],
-                      fontWeight: FontWeight.bold,
+                Transform.translate(
+                  offset: Offset(30,0), // Move 30px to the left
+                  child: Container(
+                    padding:
+                        EdgeInsets.only(left: 12, right: 12, top: 4, bottom: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.pink[100],
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24), // Increased spacing
 
             // Due Date Section
             Row(
@@ -170,7 +180,7 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Due Date',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
                 Text(
@@ -185,7 +195,7 @@ class NFTLandingPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24), // Increased spacing
 
             // Attachment Section
             Row(
@@ -194,7 +204,7 @@ class NFTLandingPage extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   'Attachment',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
                 ),
                 SizedBox(width: 8),
                 Container(
@@ -223,7 +233,7 @@ class NFTLandingPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24), // Increased spacing
 
             // Custom Section Button
             Center(
