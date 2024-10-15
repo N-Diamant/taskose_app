@@ -1,19 +1,41 @@
 import 'package:flutter/material.dart';
-import 'pages/dashboard_page.dart';
+import 'package:flutter_application_1/pages/dashboard_page.dart';
+
 
 void main() {
-  runApp(TaskoseApp());
+  runApp(MyApp());
 }
 
-class TaskoseApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Taskose Mobile',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
       home: DashboardPage(),
     );
   }
 }
+
+
+
+// class ProjectDetailsPage extends StatelessWidget {
+//   final String title;
+
+//   ProjectDetailsPage({required this.title});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Colors.purple,
+//         title: Text(title),
+//       ),
+//       body: Center(
+//         child: Text(
+//           "Details for $title",
+//           style: GoogleFonts.poppins(fontSize: 24),
+//         ),
+//       ),
+//     );
+//   }
+// }

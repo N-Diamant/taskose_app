@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import '../components/profile_avatar.dart';
 import '../components/project_card.dart';
 import '../components/bottom_nav.dart';
+import '../components/search_bar.dart'; // Assuming SearchBar component is separated
 
-class DashboardPage extends StatefulWidget {
-  @override
-  _DashboardPageState createState() => _DashboardPageState();
-}
-
-class _DashboardPageState extends State<DashboardPage> {
-  bool _isHovered = false;
-
+class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,6 +77,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ],
             ),
           ),
+
           Expanded(
             child: Container(
               width: MediaQuery.of(context).size.width, // Ensures full screen width
@@ -97,7 +92,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Row to align 'Recent Projects' and 'View All' horizontally
+                  // Using Row to align 'Recent Projects' and 'View All' like a flex layout
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -108,28 +103,11 @@ class _DashboardPageState extends State<DashboardPage> {
                           fontSize: 18,
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          // Navigate to the desired page here
-                        },
-                        child: MouseRegion(
-                          onEnter: (_) {
-                            setState(() {
-                              _isHovered = true;
-                            });
-                          },
-                          onExit: (_) {
-                            setState(() {
-                              _isHovered = false;
-                            });
-                          },
-                          child: Text(
-                            'View All',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: _isHovered ? Colors.black : Colors.grey[400],
-                            ),
-                          ),
+                      Text(
+                        'View All',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[400], // Gray color for "View All"
                         ),
                       ),
                     ],
