@@ -23,7 +23,7 @@ To set up the project locally, follow these steps:
 
 3.Run the app: Connect a device or start an emulator, then run:
 
- flutter run
+ --> flutter run
 
 ## Usage
 
