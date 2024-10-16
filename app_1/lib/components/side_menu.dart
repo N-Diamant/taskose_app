@@ -39,27 +39,31 @@ class SideMenu extends StatelessWidget {
                 // Profile Section
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundImage: NetworkImage(
-                        'https://via.placeholder.com/150', // Placeholder image for profile avatar
-                      ),
-                    ),
+                     CircleAvatar(
+  radius: 35, // Adjust the radius as needed
+  backgroundColor: Colors.white, // Set the background color of the circle
+  child: Icon(
+    Icons.person, // Use person icon for profile
+    size: 30,
+    color: Colors.grey[400], // Set icon color as in the image
+  ),
+),
                     const SizedBox(width: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+
                       children: [
                         Text(
                           "Good morning",
                           style: TextStyle(
-                            color: Colors.grey[400],
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             fontSize: 14,
                           ),
                         ),
                         Text(
                           "Jennifer Lyine",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
@@ -88,12 +92,46 @@ class SideMenu extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.all(0),
               children: [
-                DrawerItem(
-                  icon: Icons.home,
-                  text: "Home",
-                  onTap: () {
-                    // Define actions for Home tap
-                  },
+                ExpansionTile(
+                  title: Row(
+                    children: [
+                      Icon(
+                        Icons.home,
+                        color: Colors.grey[400],
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        "Home",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  children: [
+                    DrawerItem(
+                      icon: Icons.dashboard,
+                      text: "Home01",
+                      onTap: () {
+                        // Define actions for Home01 tap
+                      },
+                    ),
+                    DrawerItem(
+                      icon: Icons.home,
+                      text: "Home02",
+                      onTap: () {
+                        // Define actions for Home02 tap
+                      },
+                    ),
+                    DrawerItem(
+                      icon: Icons.home_repair_service,
+                      text: "Home03",
+                      onTap: () {
+                        // Define actions for Home03 tap
+                      },
+                    ),
+                  ],
                 ),
                 DrawerItem(
                   icon: Icons.pages,

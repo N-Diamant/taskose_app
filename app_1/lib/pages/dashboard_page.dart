@@ -18,7 +18,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF7980FF), // Matching the background color
-      drawer:  Drawer(
+      drawer: Drawer(
         child: SideMenu(), // Your custom side menu component
       ),
       body: Builder(
@@ -36,18 +36,52 @@ class _DashboardPageState extends State<DashboardPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ProfileAvatar(
-                          imageUrl: 'https://via.placeholder.com/150',
-                          name: 'Jennifer Lyine',
-                          greeting: 'Hi Jennifer, Good Morning!',
+                        CircleAvatar(
+                          radius: 25, // Adjust the radius as needed
+                          backgroundColor: Colors
+                              .white, // Set the background color of the circle
+                          child: Icon(
+                            Icons.person, // Use person icon for profile
+                            size: 20,
+                            color: Colors
+                                .grey[400], // Set icon color as in the image
+                          ),
                         ),
+
+                        Padding(
+                          padding: EdgeInsets.only(right: 200),
+
+                          child: Column(
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              Text(
+                                "Good morning",
+                                style: TextStyle(
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                "Jennifer Lyine",
+                                style: TextStyle(
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
                         // Row for menu and notification icons
                         Row(
                           children: [
                             IconButton(
                               icon: const Icon(
                                 Icons.menu, // Menu icon
-                                color: Colors.white, // White color to match the theme
+                                color: Colors
+                                    .white, // White color to match the theme
                                 size: 25,
                               ),
                               onPressed: () {
@@ -61,8 +95,10 @@ class _DashboardPageState extends State<DashboardPage> {
                               children: [
                                 IconButton(
                                   icon: const Icon(
-                                    Icons.notifications, // Notification bell icon
-                                    color: Colors.white, // White color to match the theme
+                                    Icons
+                                        .notifications, // Notification bell icon
+                                    color: Colors
+                                        .white, // White color to match the theme
                                     size: 25, // Adjust size as needed
                                   ),
                                   onPressed: () {
@@ -76,7 +112,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                     width: 8,
                                     height: 8,
                                     decoration: const BoxDecoration(
-                                      color: Colors.red, // Red dot for notification
+                                      color: Colors
+                                          .red, // Red dot for notification
                                       shape: BoxShape.circle,
                                     ),
                                   ),
@@ -87,15 +124,19 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20), // Spacing between profile and search bar
+                    const SizedBox(
+                        height: 20), // Spacing between profile and search bar
                     // Add the search bar here
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF7980FF), // Light purple background color
-                        borderRadius: BorderRadius.circular(15), // Rounded corners
+                        color: const Color(
+                            0xFF7980FF), // Light purple background color
+                        borderRadius:
+                            BorderRadius.circular(15), // Rounded corners
                         border: Border.all(
-                          color: const Color.fromARGB(255, 227, 227, 227), // White border
+                          color: const Color.fromARGB(
+                              255, 227, 227, 227), // White border
                           width: 1, // 1px width
                         ),
                       ),
@@ -107,12 +148,14 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                           hintText: "Find your task",
                           hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 227, 227, 227), // White hint text color
+                            color: Color.fromARGB(
+                                255, 227, 227, 227), // White hint text color
                           ),
                           border: InputBorder.none, // Remove the default border
                         ),
                         style: TextStyle(
-                          color: Color.fromARGB(255, 227, 227, 227), // Text color inside the text field
+                          color: Color.fromARGB(255, 227, 227,
+                              227), // Text color inside the text field
                         ),
                       ),
                     ),
@@ -121,7 +164,9 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
               Expanded(
                 child: Container(
-                  width: MediaQuery.of(context).size.width, // Ensures full screen width
+                  width: MediaQuery.of(context)
+                      .size
+                      .width, // Ensures full screen width
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -163,7 +208,9 @@ class _DashboardPageState extends State<DashboardPage> {
                                 'View All',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: _isHovered ? Colors.black : Colors.grey[400],
+                                  color: _isHovered
+                                      ? Colors.black
+                                      : Colors.grey[400],
                                 ),
                               ),
                             ),
