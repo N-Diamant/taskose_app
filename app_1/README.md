@@ -23,9 +23,10 @@ To set up the project locally, follow these steps:
 
 3.Run the app: Connect a device or start an emulator, then run:
 
-flutter run
+ flutter run
 
 ## Usage
 
 . Upon opening the app, users will be greeted with a home page displaying their recent projects and tasks.
+
 .Users can navigate to view details for each project, including descriptions, team members, and due dates.
