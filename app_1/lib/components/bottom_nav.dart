@@ -5,27 +5,52 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-
-
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add_circle_outline),
-          label: 'Add',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-      ],
-      currentIndex: 0, // Change dynamically
-      onTap: (int index) {
-        // Handle navigation here
-      },
+    return Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: Colors.transparent,   // Remove splash effect
+        highlightColor: Colors.transparent, // Remove highlight effect
+        hoverColor: Colors.transparent,     // Remove hover effect
+      ),
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false, // Hide selected labels
+        iconSize: 25.0, // Increase icon size
+        elevation: 0, // Remove shadow
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: MouseRegion(
+              onHover: (_) {}, // Disable any hover interaction
+              child: const Icon(Icons.home),
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: MouseRegion(
+              onHover: (_) {}, // Disable any hover interaction
+              child: const Icon(Icons.list_alt),
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: MouseRegion(
+              onHover: (_) {}, // Disable any hover interaction
+              child: const Icon(Icons.messenger_outlined),
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: MouseRegion(
+              onHover: (_) {}, // Disable any hover interaction
+              child: const Icon(Icons.person),
+            ),
+            label: '',
+          ),
+        ],
+        currentIndex: 0,
+        onTap: (int index) {
+          // Handle navigation here
+        },
+      ),
     );
   }
 }
