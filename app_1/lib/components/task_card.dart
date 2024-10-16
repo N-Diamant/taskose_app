@@ -5,7 +5,7 @@ class TaskCard extends StatelessWidget {
   final int progress;
   final List<String> avatars;
 
-  TaskCard({
+  const TaskCard({super.key,
     required this.taskName,
     required this.progress,
     required this.avatars,
@@ -18,25 +18,25 @@ class TaskCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               taskName,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Progress', style: TextStyle(color: Colors.grey)),
-                Text('$progress%', style: TextStyle(fontWeight: FontWeight.bold)),
+                const Text('Progress', style: TextStyle(color: Colors.grey)),
+                Text('$progress%', style: const TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             CircularProgressIndicator(value: progress / 100),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: avatars.map((url) {
                 return Padding(

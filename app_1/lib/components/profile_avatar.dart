@@ -5,7 +5,7 @@ class ProfileAvatar extends StatelessWidget {
   final String name;
   final String greeting;
 
-  ProfileAvatar({
+  const ProfileAvatar({super.key,
     required this.imageUrl,
     required this.name,
     required this.greeting,
@@ -19,17 +19,17 @@ class ProfileAvatar extends StatelessWidget {
           radius: 30,
           backgroundImage: NetworkImage(imageUrl), // Sample image
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Hi $name,',
-              style: TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.bold),
             ),
             Text(
               greeting,
-              style: TextStyle(fontSize: 14,color: Colors.white),
+              style: const TextStyle(fontSize: 14,color: Colors.white),
             ),
           ],
         ),

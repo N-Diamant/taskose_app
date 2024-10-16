@@ -6,7 +6,7 @@ class ProjectCard extends StatelessWidget {
   final int progress;
   final List<String> avatars;
 
-  ProjectCard({
+  const ProjectCard({super.key,
     required this.projectName,
     required this.date,
     required this.progress,
@@ -20,38 +20,38 @@ class ProjectCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               projectName,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Row(
               children: [
-                Icon(Icons.calendar_today, size: 14),
-                SizedBox(width: 5),
-                Text(date, style: TextStyle(color: Colors.grey)),
+                const Icon(Icons.calendar_today, size: 14),
+                const SizedBox(width: 5),
+                Text(date, style: const TextStyle(color: Colors.grey)),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.network('https://via.placeholder.com/150'), // Placeholder for project image
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Progress', style: TextStyle(color: Colors.grey)),
-                Text('$progress%', style: TextStyle(fontWeight: FontWeight.bold)),
+                const Text('Progress', style: TextStyle(color: Colors.grey)),
+                Text('$progress%', style: const TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             LinearProgressIndicator(value: progress / 100),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: avatars.map((url) {
                 return Padding(
