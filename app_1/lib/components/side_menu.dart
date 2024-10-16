@@ -18,11 +18,11 @@ class SideMenu extends StatelessWidget {
                 Row(
                   children: [
                     // Logo
-                    Image.network(
-                      'https://via.placeholder.com/50', // Placeholder image for logo
-                      width: 50,
-                      height: 50,
-                    ),
+                    // Image.network(
+                    //   'https://via.placeholder.com/50', // Placeholder image for logo
+                    //   width: 50,
+                    //   height: 50,
+                    // ),
                     const SizedBox(width: 10),
                     // App Name
                     Text(

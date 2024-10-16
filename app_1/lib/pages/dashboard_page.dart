@@ -12,22 +12,18 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  bool _isDrawerOpen = false;
-   bool _isHovered = false;
-  void toggleDrawer() {
-    setState(() {
-      _isDrawerOpen = !_isDrawerOpen; // Toggle the drawer's visibility
-    });
-  }
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF7980FF), // Matching the background color
-      drawer: _isDrawerOpen ? SideMenu() : null, // Show the sidebar when open
-      body: Stack(
-        children: [
-          Column(
+      drawer:  Drawer(
+        child: SideMenu(), // Your custom side menu component
+      ),
+      body: Builder(
+        builder: (BuildContext context) {
+          return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Header section for profile, greeting, and icons
@@ -54,7 +50,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                 color: Colors.white, // White color to match the theme
                                 size: 25,
                               ),
-                              onPressed: toggleDrawer, // Toggle sidebar when clicked
+                              onPressed: () {
+                                // This opens the drawer
+                                Scaffold.of(context).openDrawer();
+                              },
                             ),
                             const SizedBox(width: 10), // Spacing between icons
                             Stack(
@@ -100,8 +99,8 @@ class _DashboardPageState extends State<DashboardPage> {
                           width: 1, // 1px width
                         ),
                       ),
-                      child: TextField(
-                        decoration: const InputDecoration(
+                      child: const TextField(
+                        decoration: InputDecoration(
                           icon: Icon(
                             Icons.search,
                             color: Colors.white, // White search icon
@@ -112,7 +111,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                           border: InputBorder.none, // Remove the default border
                         ),
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Color.fromARGB(255, 227, 227, 227), // Text color inside the text field
                         ),
                       ),
@@ -191,15 +190,23 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                       ),
                       const SizedBox(height: 10),
+                      // TaskCard(
+                      //   taskName: 'Fintech Project',
+                      //   progress: 85,
+                      //   avatars: [
+                      //     'https://via.placeholder.com/50',
+                      //     'https://via.placeholder.com/50',
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
               ),
             ],
-          ),
-        ],
+          );
+        },
       ),
-      bottomNavigationBar: BottomNav(),
+      bottomNavigationBar: const BottomNav(),
     );
   }
 }
